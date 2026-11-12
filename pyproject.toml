@@ -3,15 +3,28 @@ name = "research-assistant"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "sam akella", email = "sam.akella@pm.me" }
-]
+authors = [{ name = "sam akella", email = "sam.akella@pm.me" }]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "arxiv>=4.0.2",
+    "dotenv>=0.9.9",
+    "langchain-openai>=1.7.4",
+    "langchain[mcp]>=1.5.0",
+    "langgraph>=1.2.21",
+    "python-dotenv>=1.2.4",
+]
+
+[tool.ty.environment]
+root = ["."]
+python = "./.venv"
 
 [project.scripts]
-research-assistant = "research_assistant:main"
+rs-backend = "backend.app.main:main"
 
 [build-system]
-requires = ["uv_build>=0.12.0,<0.13.0"]
+requires = ["uv_build>=0.13.8,<0.14"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "backend"
+module-root = ""
