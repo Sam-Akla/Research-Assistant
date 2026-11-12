@@ -1,0 +1,65 @@
+{
+  "2506.10106v1": {
+    "title": "One For All: LLM-based Heterogeneous Mission Planning in Precision Agriculture",
+    "authors": [
+      "Marcos Abel Zuzu\u00e1rregui",
+      "Mustafa Melih Toslak",
+      "Stefano Carpin"
+    ],
+    "summary": "Artificial intelligence is transforming precision agriculture, offering farmers new tools to streamline their daily operations. While these technological advances promise increased efficiency, they often introduce additional complexity and steep learning curves that are particularly challenging for non-technical users who must balance tech adoption with existing workloads. In this paper, we present a natural language (NL) robotic mission planner that enables non-specialists to control heterogeneous robots through a common interface. By leveraging large language models (LLMs) and predefined primitives, our architecture seamlessly translates human language into intermediate descriptions that can be executed by different robotic platforms. With this system, users can formulate complex agricultural missions without writing any code. In the work presented in this paper, we extend our previous system tailored for wheeled robot mission planning through a new class of experiments involving robotic manipulation and computer vision tasks. Our results demonstrate that the architecture is both general enough to support a diverse set of robots and powerful enough to execute complex mission requests. This work represents a significant step toward making robotic automation in precision agriculture more accessible to non-technical users.",
+    "pdf_url": "https://arxiv.org/pdf/2506.10106v1",
+    "published": "2025-06-11"
+  },
+  "2206.11920v1": {
+    "title": "Agriculture-Vision Challenge 2022 -- The Runner-Up Solution for Agricultural Pattern Recognition via Transformer-based Models",
+    "authors": [
+      "Zhicheng Yang",
+      "Jui-Hsin Lai",
+      "Jun Zhou",
+      "Hang Zhou",
+      "Chen Du",
+      "Zhongcheng Lai"
+    ],
+    "summary": "The Agriculture-Vision Challenge in CVPR is one of the most famous and competitive challenges for global researchers to break the boundary between computer vision and agriculture sectors, aiming at agricultural pattern recognition from aerial images. In this paper, we propose our solution to the third Agriculture-Vision Challenge in CVPR 2022. We leverage a data pre-processing scheme and several Transformer-based models as well as data augmentation techniques to achieve a mIoU of 0.582, accomplishing the 2nd place in this challenge.",
+    "pdf_url": "https://arxiv.org/pdf/2206.11920v1",
+    "published": "2022-06-23"
+  },
+  "1905.12411v1": {
+    "title": "Designing and Implementing Data Warehouse for Agricultural Big Data",
+    "authors": [
+      "Vuong M. Ngo",
+      "Nhien-An Le-Khac",
+      "M-Tahar Kechadi"
+    ],
+    "summary": "In recent years, precision agriculture that uses modern information and communication technologies is becoming very popular. Raw and semi-processed agricultural data are usually collected through various sources, such as: Internet of Thing (IoT), sensors, satellites, weather stations, robots, farm equipment, farmers and agribusinesses, etc. Besides, agricultural datasets are very large, complex, unstructured, heterogeneous, non-standardized, and inconsistent. Hence, the agricultural data mining is considered as Big Data application in terms of volume, variety, velocity and veracity. It is a key foundation to establishing a crop intelligence platform, which will enable resource efficient agronomy decision making and recommendations. In this paper, we designed and implemented a continental level agricultural data warehouse by combining Hive, MongoDB and Cassandra. Our data warehouse capabilities: (1) flexible schema; (2) data integration from real agricultural multi datasets; (3) data science and business intelligent support; (4) high performance; (5) high storage; (6) security; (7) governance and monitoring; (8) replication and recovery; (9) consistency, availability and partition tolerant; (10) distributed and cloud deployment. We also evaluate the performance of our data warehouse.",
+    "pdf_url": "https://arxiv.org/pdf/1905.12411v1",
+    "published": "2019-05-29"
+  },
+  "1709.03526v1": {
+    "title": "FieldSAFE: Dataset for Obstacle Detection in Agriculture",
+    "authors": [
+      "Mikkel Fly Kragh",
+      "Peter Christiansen",
+      "Morten Stigaard Laursen",
+      "Morten Larsen",
+      "Kim Arild Steen",
+      "Ole Green",
+      "Henrik Karstoft",
+      "Rasmus Nyholm J\u00f8rgensen"
+    ],
+    "summary": "In this paper, we present a novel multi-modal dataset for obstacle detection in agriculture. The dataset comprises approximately 2 hours of raw sensor data from a tractor-mounted sensor system in a grass mowing scenario in Denmark, October 2016. Sensing modalities include stereo camera, thermal camera, web camera, 360-degree camera, lidar, and radar, while precise localization is available from fused IMU and GNSS. Both static and moving obstacles are present including humans, mannequin dolls, rocks, barrels, buildings, vehicles, and vegetation. All obstacles have ground truth object labels and geographic coordinates.",
+    "pdf_url": "https://arxiv.org/pdf/1709.03526v1",
+    "published": "2017-09-11"
+  },
+  "2608.07984v1": {
+    "title": "AgriField-40K: Adapting Vision Models to Agriculture With Efficient Continual Pretraining",
+    "authors": [
+      "Vasileios Tzouras",
+      "Paraskevas Pegios",
+      "Lazaros Nalpantidis"
+    ],
+    "summary": "Field-based agricultural computer vision is important for precision agriculture, yet it largely depends on expensive annotations and costly adaptation of large pretrained models. We introduce AgriField-40K, a field-centric dataset curated from 17 public resources and covering diverse crops, weeds, and field conditions. Building on this, we present AgriMAE, a parameter-efficient continual pretraining baseline that adapts a masked autoencoder pretrained on natural images by training only lightweight adapters. We further explore semantic feature reconstruction as an alternative pretraining objective and evaluate transfer across multiple tasks. AgriMAE consistently improves downstream performance and can match or even outperform full fine-tuning while using up to $9\\times$ fewer trainable parameters, showing that AgriField-40K is a practical resource for continual pretraining in agricultural vision. Project page: https://dtu-pas.github.io/agrifield40k/",
+    "pdf_url": "https://arxiv.org/pdf/2608.07984v1",
+    "published": "2026-08-08"
+  }
+}

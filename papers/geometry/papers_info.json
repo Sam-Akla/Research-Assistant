@@ -1,0 +1,49 @@
+{
+  "0711.0446v1": {
+    "title": "Asymptotic Properties of Hilbert Geometry",
+    "authors": [
+      "Alexander A. Borisenko",
+      "Eugeny A. Olin"
+    ],
+    "summary": "  We show that the spheres in Hilbert geometry have the same volume growth entropy as those in the Lobachevsky space. We give the asymptotic estimates for the ratio of the volume of metric ball to the area of the metric sphere in Hilbert geometry. Derived estimates agree with the well-known fact in the Lobachevsky space",
+    "pdf_url": "https://arxiv.org/pdf/0711.0446v1",
+    "published": "2007-11-03"
+  },
+  "math/0505221v1": {
+    "title": "Sasakian Geometry and Einstein Metrics on Spheres",
+    "authors": [
+      "Charles P. Boyer",
+      "Krzysztof Galicki"
+    ],
+    "summary": "  This paper is based on a talk presented by the first author at the Short Program on Riemannian Geometry that took place at the Centre de Recherche Math\u00e9matiques, Universit\u00e9 de Montr\u00e9al, during the period June 28-July 16, 2004. It is a report on our joint work with J\u00e1nos Koll\u00e1r concerning the existence of an abundance of Einstein metrics on odd dimensional spheres, including exotic spheres.",
+    "pdf_url": "https://arxiv.org/pdf/math/0505221v1",
+    "published": "2005-05-11"
+  },
+  "2404.03765v1": {
+    "title": "Differential geometry using quaternions",
+    "authors": [
+      "Sergio Giardino"
+    ],
+    "summary": "This paper establishes the basis of the quaternionic differential geometry ($\\mathbbm H$DG) initiated in a previous article. The usual concepts of curves and surfaces are generalized to quaternionic constraints, as well as the curvature and torsion concepts, differential forms, directional derivatives and the structural equations. The analogy between the quaternionic and the real geometries is obtained using a matrix representation of quaternions. The results evidences the quaternionic formalism as a suitable language to differential geometry that can be useful in various directions of future investigation.",
+    "pdf_url": "https://arxiv.org/pdf/2404.03765v1",
+    "published": "2024-04-04"
+  },
+  "0708.4298v3": {
+    "title": "Dilatation structures in sub-riemannian geometry",
+    "authors": [
+      "Marius Buliga"
+    ],
+    "summary": "  Based on the notion of dilatation structure arXiv:math/0608536, we give an intrinsic treatment to sub-riemannian geometry, started in the paper arXiv:0706.3644 .\n  Here we prove that regular sub-riemannian manifolds admit dilatation structures. From the existence of normal frames proved by Bellaiche we deduce the rest of the properties of regular sub-riemannian manifolds by using the formalism of dilatation structures.",
+    "pdf_url": "https://arxiv.org/pdf/0708.4298v3",
+    "published": "2007-08-31"
+  },
+  "1705.05818v2": {
+    "title": "Noether's Theorem in Multisymplectic Geometry",
+    "authors": [
+      "Jonathan Herman"
+    ],
+    "summary": "We extend Noether's theorem to the setting of multisymplectic geometry by exhibiting a correspondence between conserved quantities and continuous symmetries on a multi-Hamiltonian system. We show that a homotopy co-momentum map interacts with this correspondence in a way analogous to the moment map in symplectic geometry.\n  We apply our results to generalize the theory of the classical momentum and position functions from the phase space of a given physical system to the multisymplectic phase space. We also apply our results to manifolds with a torsion-free $G_2$ structure.",
+    "pdf_url": "https://arxiv.org/pdf/1705.05818v2",
+    "published": "2017-05-16"
+  }
+}

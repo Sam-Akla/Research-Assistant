@@ -1,0 +1,44 @@
+{
+  "2211.03895v1": {
+    "title": "Facial Tic Detection in Untrimmed Videos of Tourette Syndrome Patients",
+    "authors": [
+      "Yutao Tang",
+      "Benjam\u00edn B\u00e9jar",
+      "Joey K. -Y. Essoe",
+      "Joseph F. McGuire",
+      "Ren\u00e9 Vidal"
+    ],
+    "summary": "Tourette Syndrome (TS) is a behavior disorder that onsets in childhood and is characterized by the expression of involuntary movements and sounds commonly referred to as tics. Behavioral therapy is the first-line treatment for patients with TS, and it helps patients raise awareness about tic occurrence as well as develop tic inhibition strategies. However, the limited availability of therapists and the difficulties for in-home follow up work limits its effectiveness. An automatic tic detection system that is easy to deploy could alleviate the difficulties of home-therapy by providing feedback to the patients while exercising tic awareness. In this work, we propose a novel architecture (T-Net) for automatic tic detection and classification from untrimmed videos. T-Net combines temporal detection and segmentation and operates on features that are interpretable to a clinician. We compare T-Net to several state-of-the-art systems working on deep features extracted from the raw videos and T-Net achieves comparable performance in terms of average precision while relying on interpretable features needed in clinical practice.",
+    "pdf_url": "https://arxiv.org/pdf/2211.03895v1",
+    "published": "2022-11-07"
+  },
+  "2007.02414v1": {
+    "title": "Analysis of Neural Clusters due to Deep Brain Stimulation Pulses",
+    "authors": [
+      "Daniel Kuelbs",
+      "Jacob Dunefsky",
+      "Bharat Monga",
+      "Jeff Moehlis"
+    ],
+    "summary": "Deep brain stimulation (DBS) is an established method for treating pathological conditions such as Parkinson's disease, dystonia, Tourette syndrome, and essential tremor. While the precise mechanisms which underly the effectiveness of DBS are not fully understood, theoretical studies of populations of neural oscillators stimulated by periodic pulses suggest that this may be related to clustering, in which subpopulations of the neurons are synchronized, but the subpopulations are desynchronized with respect to each other. The details of the clustering behavior depend on the frequency and amplitude of the stimulation in a complicated way. In the present study, we investigate how the number of clusters, their stability properties, and their basins of attraction can be understood in terms of one-dimensional maps defined on the circle. Moreover, we generalize this analysis to stimuli that consist of pulses with alternating properties, which provide additional degrees of freedom in the design of DBS stimuli. Our results illustrate how the complicated properties of clustering behavior for periodically forced neural oscillator populations can be understood in terms of a much simpler dynamical system.",
+    "pdf_url": "https://arxiv.org/pdf/2007.02414v1",
+    "published": "2020-07-05"
+  },
+  "2608.24911v1": {
+    "title": "Visualizing Patient Trajectories and Disorder Co-occurrences in Child and Adolescent Mental Health",
+    "authors": [
+      "Dipendra Pant",
+      "Kaban Koochakpour",
+      "Odd Sverre Westbye",
+      "Carolyn Clausen",
+      "Bennett L. Leventhal",
+      "Roman Koposov",
+      "Thomas Brox R\u00f8st",
+      "Norbert Skokauskas",
+      "\u00d8ystein Nytr\u00f8"
+    ],
+    "summary": "Understanding patient trajectories and identifying patterns in episodes of care is critical for effective healthcare decision-making. We present a patient timeline visualization using clustered episodes of care derived from over 35 years of Child and Adolescent Mental Health Services (CAMHS) data. Patients were categorized into 12 groups based on three features: age group (preschoolers, middle childhood, teenagers) at the start of the first episode, gender, and presence or absence of Attention-Deficit Hyperactivity Disorder (ADHD), in order to group similar patients. The patients, timeline with demographics, and episode of care information are displayed in the trajectory to facilitate understanding of the patient and associated events, allowing observation of temporal patterns and variations. These plots reveal similarities and differences in care needs and patterns across groups. Females without ADHD have a steady increase in the number of episodes of care with age. Females with ADHD and all males experienced a peak in the number of episodes during middle childhood, followed by a decline in the teenage years. To compare and understand the intensity and co-occurring disorders with ADHD across different groups, we plotted an ADHD co-occurrence graph, and Tourette's syndrome was co-occurring predominantly in all age groups. We evaluated and refined our visualizations with the involvement of clinicians, who found them useful for understanding the context of CAMHS care. These visual tools make the population data in the Electronic Health Records (EHR) available for decision-making and enhancing the understanding of care and disorder patterns across groups.",
+    "pdf_url": "https://arxiv.org/pdf/2608.24911v1",
+    "published": "2026-07-25"
+  }
+}
