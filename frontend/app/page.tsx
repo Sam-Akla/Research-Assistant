@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { Bubble, BubbleContent } from "@/components/ui/bubble"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { SendIcon } from "lucide-react"
 import { Message, MessageAvatar, MessageContent, MessageFooter, MessageHeader } from "@/components/ui/message"
 
@@ -88,105 +88,114 @@ export default function Home() {
 
 
     return (
-        <main className="mx-auto flex h-dvh max-w-4xl flex-col gap-6 p-4 sm:p-6">
-            <h1 className="text-4xl font-black">PaperLab.</h1>
+        <div className="bg-cyan-200 min-h-dvh">
+            <main className="mx-auto flex h-dvh max-w-7xl flex-col gap-6 p-4 sm:p-6">
+                <h1 className="text-4xl font-black">PaperLab.</h1>
 
-            <Card className="flex min-h-0 flex-1 flex-col">
-                <CardHeader>
-                    <CardTitle>Research Assistant</CardTitle>
-                </CardHeader>
+                <Card className="flex min-h-0 flex-1 flex-col">
+                    <CardHeader>
+                        <CardTitle>Research Assistant</CardTitle>
+                    </CardHeader>
 
-                <CardContent className="flex min-h-0 flex-1 flex-col gap-4">
-                    <div
-                        ref={transcript}
-                        role="log"
-                        aria-label="Conversation"
-                        aria-live="polite"
-                        aria-relevant="additions"
-                        tabIndex={0}
-                        className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-2"
-                    >
-                        {messages.length === 0 && (
-                            <p className="py-8 text-center text-sm text-foreground/60">
-                                Ask a question to start exploring research papers.
-                            </p>
-                        )}
-                        {messages.map((msg, index) => (
-                            <Message
-                                key={index}
-                                align={msg.role === "user" ? "end" : "start"}
-                            >
-                                <MessageAvatar>
-                                    <Avatar>
-                                        <AvatarFallback>
-                                            <span
-                                                aria-label={msg.role === "user" ? "You" : "Assistant"}
-                                            >
-                                                {msg.role === "user" ? "You" : "AI"}
-                                            </span>
-                                        </AvatarFallback>
-                                    </Avatar>
-                                </MessageAvatar>
-                                <MessageContent>
-                                    <MessageHeader>{msg.role}</MessageHeader>
-                                    <Bubble
-                                        variant={msg.role === "user" ? "default" : "secondary"}
-                                    >
-                                        <BubbleContent className="whitespace-pre-wrap">
-                                            {msg.content}
-                                        </BubbleContent>
-                                    </Bubble>
-                                    <MessageFooter>{time}</MessageFooter>
-                                </MessageContent>
-                            </Message>
-                        ))}
+                    <CardContent className="flex min-h-0 flex-1 flex-col gap-4">
+                        <div
+                            ref={transcript}
+                            role="log"
+                            aria-label="Conversation"
+                            aria-live="polite"
+                            aria-relevant="additions"
+                            tabIndex={0}
+                            className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-2"
+                        >
+                            {messages.length === 0 && (
+                                <p className="py-8 text-center text-sm text-foreground/60">
+                                    Ask a question to start exploring research papers.
+                                </p>
+                            )}
+                            {messages.map((msg, index) => (
+                                <Message
+                                    key={index}
+                                    align={msg.role === "user" ? "end" : "start"}
+                                >
+                                    <MessageAvatar>
+                                        <Avatar>
+                                            <AvatarImage
+                                                src={msg.role === "user" ? "/avatars/user.png" : "/avatars/assistant.png"}
+                                                alt="@shadcn"
+                                                onLoadingStatusChange={(status) => {
+                                                    console.log(msg.role, status)
+                                                }}
+                                            />
+                                            <AvatarFallback>
+                                                <span
+                                                    aria-label={msg.role === "user" ? "You" : "Assistant"}
+                                                >
+                                                    {msg.role === "user" ? "You" : "AI"}
+                                                </span>
+                                            </AvatarFallback>
+                                        </Avatar>
+                                    </MessageAvatar>
+                                    <MessageContent>
+                                        <MessageHeader>{msg.role}</MessageHeader>
+                                        <Bubble
+                                            variant={msg.role === "user" ? "default" : "secondary"}
+                                        >
+                                            <BubbleContent className="whitespace-pre-wrap">
+                                                {msg.content}
+                                            </BubbleContent>
+                                        </Bubble>
+                                        <MessageFooter>{time}</MessageFooter>
+                                    </MessageContent>
+                                </Message>
+                            ))}
 
-                        {loading && <p role="status">Searching papers...</p>}
-                    </div>
-
-                    <form
-                        onSubmit={(event) => {
-                            event.preventDefault()
-                            void sendMessage()
-                        }}
-                        className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-end"
-                    >
-                        <div className="min-w-0 flex-1">
-                            <label htmlFor="chat-input" className="sr-only">
-                                Message
-                            </label>
-                            <Textarea
-                                id="chat-input"
-                                value={input}
-                                onChange={(event) => setInput(event.target.value)}
-                                onKeyDown={(event) => {
-                                    if (
-                                        event.key === "Enter" &&
-                                        !event.shiftKey &&
-                                        !event.nativeEvent.isComposing
-                                    ) {
-                                        event.preventDefault()
-                                        void sendMessage()
-                                    }
-                                }}
-                                aria-describedby="chat-input-help"
-                                placeholder="Ask about research papers..."
-                                className="max-h-40 resize-none"
-                            />
-
-                            <p
-                                id="chat-input-help"
-                                className="mt-2 text-xs text-foreground/60"
-                            >
-                                Enter to send. Shift + Enter for a new line.
-                            </p>
+                            {loading && <p role="status">Searching papers...</p>}
                         </div>
-                        <Button type="submit" disabled={loading || !input.trim()}>
-                            <SendIcon aria-hidden="true" /> Send
-                        </Button>
-                    </form>
-                </CardContent>
-            </Card>
-        </main>
+
+                        <form
+                            onSubmit={(event) => {
+                                event.preventDefault()
+                                void sendMessage()
+                            }}
+                            className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-start"
+                        >
+                            <div className="min-w-0 flex-1">
+                                <label htmlFor="chat-input" className="sr-only">
+                                    Message
+                                </label>
+                                <Textarea
+                                    id="chat-input"
+                                    value={input}
+                                    onChange={(event) => setInput(event.target.value)}
+                                    onKeyDown={(event) => {
+                                        if (
+                                            event.key === "Enter" &&
+                                            !event.shiftKey &&
+                                            !event.nativeEvent.isComposing
+                                        ) {
+                                            event.preventDefault()
+                                            void sendMessage()
+                                        }
+                                    }}
+                                    aria-describedby="chat-input-help"
+                                    placeholder="Ask about research papers..."
+                                    className="max-h-40 resize-none"
+                                />
+
+                                <p
+                                    id="chat-input-help"
+                                    className="mt-2 text-xs text-foreground/60"
+                                >
+                                    Enter to send. Shift + Enter for a new line.
+                                </p>
+                            </div>
+                            <Button type="submit" disabled={loading || !input.trim()}>
+                                <SendIcon aria-hidden="true" /> Send
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+            </main>
+        </div>
     )
 }

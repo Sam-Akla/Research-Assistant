@@ -48,20 +48,20 @@
 }
 
 :root {
-    --background: hsl(28, 100%, 80%);
+    --background: hsl(204, 100%, 80%);
     --secondary-background: oklch(100% 0 0);
-    --main: hsl(190, 100%, 47%);
+    --main: hsl(359, 100%, 69%);
     --ring: oklch(0% 0 0);
     --foreground: oklch(0% 0 0);
     --main-foreground: oklch(0% 0 0);
     --border: oklch(0% 0 0);
     --overlay: oklch(0% 0 0 / 0.8);
     --shadow: 4px 4px 0px 0px var(--border);
-    --chart-1: #00C8F0;
-    --chart-2: #FF7A05;
-    --chart-3: #7A83FF;
-    --chart-4: #FF4D50;
-    --chart-5: #FACC00;
+    --chart-1: #FF6164;
+    --chart-2: #0099FF;
+    --chart-3: #FACC00;
+    --chart-4: #05E17A;
+    --chart-5: #7A83FF;
     --chart-active-dot: #000;
 }
 
