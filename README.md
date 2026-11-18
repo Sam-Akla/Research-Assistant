@@ -1,6 +1,6 @@
-# MCP chatbot
+# Research Assistant
 
-Project from course "MCP: Build Rich-Context AI Apps with Anthropic" from deeplearnig.ai
+## Resources
 
 - [shadcn/ui chatbot template](https://github.com/shadcn-ui/chatbot-template)
 - [Neobrutalism components](https://www.neobrutalism.dev)

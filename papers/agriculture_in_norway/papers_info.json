@@ -1,0 +1,13 @@
+{
+  "2506.10106v1": {
+    "title": "One For All: LLM-based Heterogeneous Mission Planning in Precision Agriculture",
+    "authors": [
+      "Marcos Abel Zuzu\u00e1rregui",
+      "Mustafa Melih Toslak",
+      "Stefano Carpin"
+    ],
+    "summary": "Artificial intelligence is transforming precision agriculture, offering farmers new tools to streamline their daily operations. While these technological advances promise increased efficiency, they often introduce additional complexity and steep learning curves that are particularly challenging for non-technical users who must balance tech adoption with existing workloads. In this paper, we present a natural language (NL) robotic mission planner that enables non-specialists to control heterogeneous robots through a common interface. By leveraging large language models (LLMs) and predefined primitives, our architecture seamlessly translates human language into intermediate descriptions that can be executed by different robotic platforms. With this system, users can formulate complex agricultural missions without writing any code. In the work presented in this paper, we extend our previous system tailored for wheeled robot mission planning through a new class of experiments involving robotic manipulation and computer vision tasks. Our results demonstrate that the architecture is both general enough to support a diverse set of robots and powerful enough to execute complex mission requests. This work represents a significant step toward making robotic automation in precision agriculture more accessible to non-technical users.",
+    "pdf_url": "https://arxiv.org/pdf/2506.10106v1",
+    "published": "2025-06-11"
+  }
+}
