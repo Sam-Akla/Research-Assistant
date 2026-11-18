@@ -1,32 +1,21 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
+import { SendIcon } from "lucide-react"
+
+import { ChatTranscript, type ChatMessage } from "@/components/chat-transcript"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
-import { Bubble, BubbleContent } from "@/components/ui/bubble"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { SendIcon } from "lucide-react"
-import { Message, MessageAvatar, MessageContent, MessageFooter, MessageHeader } from "@/components/ui/message"
-
-type ChatMessage = {
-    role: "user" | "assistant"
-    content: string
-}
+import { sendChatMessage } from "@/lib/chat-api"
 
 export default function Home() {
     const threadId = useRef<string | null>(null)
     const sending = useRef(false)
-    const transcript = useRef<HTMLDivElement>(null)
     const [messages, setMessages] = useState<ChatMessage[]>([])
     const [input, setInput] = useState("")
     const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const element = transcript.current
-        if (element) element.scrollTop = element.scrollHeight
-    }, [messages, loading])
 
     async function sendMessage() {
         const message = input.trim()
@@ -40,32 +29,7 @@ export default function Home() {
 
         try {
             threadId.current ??= crypto.randomUUID()
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    message,
-                    thread_id: threadId.current,
-                }),
-            })
-
-            if (!response.ok) {
-                throw new Error("API request failed")
-            }
-
-            const data: unknown = await response.json()
-            if (
-                typeof data !== "object" ||
-                data === null ||
-                !("response" in data) ||
-                typeof data.response !== "string" ||
-                !data.response.trim()
-            ) {
-                throw new Error("Invalid chat response")
-            }
-            const reply = data.response
+            const reply = await sendChatMessage(message, threadId.current)
 
             setMessages((prev) => [...prev, { role: "assistant", content: reply }])
         } catch {
@@ -81,11 +45,6 @@ export default function Home() {
             setLoading(false)
         }
     }
-    const time = new Date().toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-    });
-
 
     return (
         <div className="bg-cyan-200 min-h-dvh">
@@ -98,59 +57,7 @@ export default function Home() {
                     </CardHeader>
 
                     <CardContent className="flex min-h-0 flex-1 flex-col gap-4">
-                        <div
-                            ref={transcript}
-                            role="log"
-                            aria-label="Conversation"
-                            aria-live="polite"
-                            aria-relevant="additions"
-                            tabIndex={0}
-                            className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-2"
-                        >
-                            {messages.length === 0 && (
-                                <p className="py-8 text-center text-sm text-foreground/60">
-                                    Ask a question to start exploring research papers.
-                                </p>
-                            )}
-                            {messages.map((msg, index) => (
-                                <Message
-                                    key={index}
-                                    align={msg.role === "user" ? "end" : "start"}
-                                >
-                                    <MessageAvatar>
-                                        <Avatar>
-                                            <AvatarImage
-                                                src={msg.role === "user" ? "/avatars/user.png" : "/avatars/assistant.png"}
-                                                alt="@shadcn"
-                                                onLoadingStatusChange={(status) => {
-                                                    console.log(msg.role, status)
-                                                }}
-                                            />
-                                            <AvatarFallback>
-                                                <span
-                                                    aria-label={msg.role === "user" ? "You" : "Assistant"}
-                                                >
-                                                    {msg.role === "user" ? "You" : "AI"}
-                                                </span>
-                                            </AvatarFallback>
-                                        </Avatar>
-                                    </MessageAvatar>
-                                    <MessageContent>
-                                        <MessageHeader>{msg.role}</MessageHeader>
-                                        <Bubble
-                                            variant={msg.role === "user" ? "default" : "secondary"}
-                                        >
-                                            <BubbleContent className="whitespace-pre-wrap">
-                                                {msg.content}
-                                            </BubbleContent>
-                                        </Bubble>
-                                        <MessageFooter>{time}</MessageFooter>
-                                    </MessageContent>
-                                </Message>
-                            ))}
-
-                            {loading && <p role="status">Searching papers...</p>}
-                        </div>
+                        <ChatTranscript messages={messages} loading={loading} />
 
                         <form
                             onSubmit={(event) => {
