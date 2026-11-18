@@ -23,6 +23,7 @@ class PaperInfo(BaseModel):
     category: str
     published: datetime.date | None = None
     updated: datetime.date | None = None
+    summary: str
 
 
 def init_model() -> ChatOpenAI:
